@@ -1,0 +1,31 @@
+{
+  "name": "mongoose-properties",
+  "version": "0.1.0",
+  "description": "Mongoose properties and history",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VivooDev/mongoose-properties.git"
+  },
+  "keywords": [
+    "mongoose",
+    "mongo",
+    "properties",
+    "history"
+  ],
+  "author": "VivooDev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VivooDev/mongoose-properties/issues"
+  },
+  "homepage": "https://github.com/VivooDev/mongoose-properties#readme",
+  "dependencies": {
+    "mongoose": "^5"
+  }
+}
