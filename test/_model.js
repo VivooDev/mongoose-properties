@@ -4,28 +4,39 @@ const { Schema } = mongoose;
 const mongooseProperties = require('./../../mongoose-properties');
 
 // Schema attributes
-const modelName = 'TestModel';
-const collectionName = 'ali_test_model';
+const modelName = 'TestUser';
+const collectionName = 'test_user';
 
-const testModelSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
+const testUserSchema = new Schema({
+  account: {
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      trim: true,
+      lowercase: true,
+      unique: true,
+    }
   },
-  userId: {
-    type: String,
-    required: true,
+  profile: {
+    photo: {
+      type: String,
+      default: 'https://via.placeholder.com/150'
+    },
   },
 }, {
   timestamps: true,
 });
 
-testModelSchema.plugin(mongooseProperties, {
+testUserSchema.plugin(mongooseProperties, {
   history: 730,
   collectionName: collectionName,
-  identifier: 'userId',
+  identifier: '_id',
 });
 
 module.exports.modelName = modelName;
 module.exports.collectionName = collectionName;
-module.exports.model = mongoose.model(modelName, testModelSchema, collectionName);
+module.exports.model = mongoose.model(modelName, testUserSchema, collectionName);
